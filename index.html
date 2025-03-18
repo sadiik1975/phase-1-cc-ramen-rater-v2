@@ -1,54 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ramen Rater</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
   <script defer type="module" src="./src/index.js"></script>
 </head>
 
 <body>
   <header>
-    <h3>Ramen Rater</h3>
+    <h1>Ramen Rater</h1>
   </header>
 
-  
-  <div id="ramen-menu">
-  
-  </div>
+  <!-- Ramen Menu Section -->
+  <section>
+    <h2>Ramen Menu</h2>
+    <div id="ramen-menu"></div>
+  </section>
 
+  <!-- Ramen Details Section -->
+  <section id="ramen-detail">
+    <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Select a ramen">
+    <h2 id="ramen-name">Insert Name Here</h2>
+    <h3 id="restaurant-name">Insert Restaurant Here</h3>
+    <p><strong>Rating:</strong> <span id="rating-display">Insert rating here</span>/10</p>
+    <p><strong>Comment:</strong> <span id="comment-display">Insert comment here</span></p>
+  </section>
 
-  <div id="ramen-detail">
-    <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" />
-    <h2 class="name">Insert Name Here</h2>
-    <h3 class="restaurant">Insert Restaurant Here</h3>
-  </div>
+  <!-- Form to Add New Ramen -->
+  <section>
+    <h2>Add New Ramen</h2>
+    <form id="new-ramen">
+      <label for="new-name">Name:</label>
+      <input type="text" id="new-name" required>
 
-  <h3>Rating:</h3>
-  <p>
-    <span id='rating-display'>Insert rating here</span> / 10
-  </p>
-  <h3>Comment:</h3>
-  <p id='comment-display'>
-    Insert comment here
-  </p>
+      <label for="new-restaurant">Restaurant:</label>
+      <input type="text" id="new-restaurant" required>
 
+      <label for="new-image">Image URL:</label>
+      <input type="text" id="new-image" required>
 
-  <form id="new-ramen">
-    <h4>Add New Ramen</h4>
-    <label for="new-name">Name: </label>
-    <input type="text" name="name" id="new-name" />
-    <label for="new-restaurant">Restaurant: </label>
-    <input type="text" name="restaurant" id="new-restaurant" />
-    <label for="new-image">Image: </label>
-    <input type="text" name="image" id="new-image" />
-    <label for="new-rating">Rating: </label>
-    <input type="number" name="rating" id="new-rating" />
-    <label for="new-comment">Comment: </label>
-    <textarea name="new-comment" name="new-comment" id="new-comment"></textarea>
-    <input type="submit" id='submit-button' value="Create" />
-  </form>
+      <label for="new-rating">Rating (1-10):</label>
+      <input type="number" id="new-rating" min="1" max="10" required>
+
+      <label for="new-comment">Comment:</label>
+      <textarea id="new-comment" required></textarea>
+
+      <button type="submit">Add Ramen</button>
+      <button id="delete-button">Delete Ramen</button>
+
+    </form>
+  </section>
 
 </body>
 
