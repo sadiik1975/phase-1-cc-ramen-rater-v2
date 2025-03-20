@@ -4,7 +4,7 @@
   "description": "practice fetch requests, using an API, responding to user events, updating the dom",
   "main": "index.js",
   "scripts": {
-    "test": "vitest --run --environment happy-dom"
+    "test": "vitest src/*.test.js --run --environment happy-dom"
   },
   "repository": {
     "type": "git",
@@ -28,9 +28,7 @@
     "@testing-library/dom": "^9.3.4",
     "happy-dom": "^13.2.1",
     "json-server": "^1.0.0-beta.3",
-    "live-server": "^1.2.2"
-  },
-  "devDependencies": {
-    "vitest": "^3.0.9"
+    "live-server": "^1.2.2",
+    "vitest": "^1.2.1"
   }
 }

@@ -12,6 +12,7 @@ beforeEach(() => {
       <h3 id="restaurant-name"></h3>
       <p id="rating-display"></p>
       <p id="comment-display"></p>
+      <button id="delete-button"></button> <!-- Added missing delete button -->
     </div>
     <form id="new-ramen">
       <input id="new-name" type="text" required>
@@ -46,8 +47,14 @@ describe("loadRamens", () => {
 describe("showRamenDetails", () => {
   it("should update ramen details", () => {
     showRamenDetails(mockRamens[0]);
+
     expect(document.getElementById("ramen-name").textContent).toBe(mockRamens[0].name);
     expect(document.getElementById("restaurant-name").textContent).toBe(mockRamens[0].restaurant);
+    
+    // Ensure delete button is assigned the correct id
+    const deleteButton = document.getElementById("delete-button");
+    expect(deleteButton).not.toBeNull();
+    expect(deleteButton.dataset.id).toBe(String(mockRamens[0].id));
   });
 });
 
